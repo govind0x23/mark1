@@ -1,0 +1,53 @@
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Create Employee
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Create Employee</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="create" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="firstname">Username</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1"
+                            placeholder="Create a unique username" name="username" required >
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname">First Name</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="First Name"
+                            name="firstname" required >
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Last Name"
+                            name="lastname" required pattern="^[a-zA-Z]+$"  >
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Enter email" name="email" required >
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Experience</label>
+                        <input type="number" class="form-control" id="exampleInputPassword1"
+                            placeholder="Years of experience" name="experience" pattern="^[0-9]+$" required  min="1" max=" "  >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="skills_score">Skill Level</label>
+                        <input type="number" class="form-control" id="exampleInputPassword1"
+                            placeholder="Skill Score 1-10" name="skills_score" required pattern="^[0-9]+$"  min="1" max="10"  >
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4">Submit</button>
+                    {% csrf_token %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

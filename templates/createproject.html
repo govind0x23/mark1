@@ -1,0 +1,66 @@
+<button type="button" class="btn btn-primary mx-2 " data-bs-toggle="modal" data-bs-target="#exampleModal2">
+    Create Projects
+</button>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade " id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Create Project</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="/create_project" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="projectname">Project Name</label>
+                        <input type="text" class="form-control" id="projectname" placeholder="Project Name"
+                            name="name" required >
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" placeholder="Project Description"
+                            name="description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="scope">Scope</label>
+                        <input type="number" class="form-control" id="scope" placeholder="Scope (1-10)"
+                            name="scope" min="1" max="10" required >
+                    </div>
+                    <div class="form-group">
+                        <label for="complexity">Technical Complexity</label>
+                        <input type="number" class="form-control" id="complexity"
+                            placeholder="Technical Complexity (1-10)" name="complexity" min="1" max="10" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="knowledge">Domain Knowledge</label>
+                        <input type="number" class="form-control" id="knowledge"
+                            placeholder="Domain Knowledge (1-10)" name="knowledge" min="1" max="10" required >
+                    </div>
+                    <div class="form-group">
+                        <label for="time_effort">Time and Effort</label>
+                        <input type="number" class="form-control" id="time_effort"
+                            placeholder="Time and Effort (1-10)" name="time_effort" min="1" max="10" required >
+                    </div>
+                    <div class="form-group">
+                        <label for="resources">Resources</label>
+                        <input type="number" class="form-control" id="resources"
+                            placeholder="Resources (1-10)" name="resources" min="1" max="10" required >
+                    </div>
+                    <div class="form-group">
+                        <label for="risk">Risk</label>
+                        <input type="number" class="form-control" id="risk" placeholder="Risk (1-10)"
+                            name="risk" min="1" max="10" required >
+                    </div>
+                    <button type="submit" class="btn btn-primary mt-4">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

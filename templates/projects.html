@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block project %}
+
+
+<div class="container"> 
+
+
+    <h1>Projects</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Project Name</th>
+          <th>Description</th>
+          <th>Scope</th>
+          <th>Technical Complexity</th>
+          <th>Domain Knowledge</th>
+          <th>Time and Effort</th>
+          <th>Resources</th>
+          <th>Risk</th>
+          <th>Project Complexity</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for project in projects %}
+        <tr>
+          <td>{{ project.name }}</td>
+          <td>{{ project.description }}</td>
+          <td>{{ project.scope }}</td>
+          <td>{{ project.complexity }}</td>
+          <td>{{ project.knowledge }}</td>
+          <td>{{ project.time_effort }}</td>
+          <td>{{ project.resources }}</td>
+          <td>{{ project.risk }}</td>
+          <td>{{ project.project_complexity }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+
+
+{% endblock project %}
