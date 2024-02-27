@@ -7,6 +7,7 @@
 
 ## Demo
 
+![](https://github.com/govind0x23/mark1/blob/main/demo.gif)
 
 
 ## Deployment
